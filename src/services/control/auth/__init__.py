@@ -5,6 +5,7 @@
 认证管理模块
 """
 
+import os
 from typing import Dict, Any
 import jwt
 import time
@@ -18,7 +19,7 @@ class AuthManager:
     def __init__(self):
         """初始化认证管理器"""
         self.logger = get_logger(__name__)
-        self.secret_key = "octopus_secret_key"
+        self.secret_key = os.environ.get('JWT_SECRET_KEY', 'change_this_secret_key_in_production')
         self.expire_time = 3600  # 1小时
     
     async def login(self, credentials: Dict[str, Any]) -> Dict[str, Any]:

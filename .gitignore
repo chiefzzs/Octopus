@@ -6,6 +6,7 @@ __pycache__/
 # Virtual environment
 venv/
 env/
+.venv/
 
 # IDE
 .idea/
@@ -26,8 +27,24 @@ logs/
 .env
 .env.local
 .env.*.local
+*.env
+
+# Secrets
+secrets/
+*.pem
+*.key
 
 # Build artifacts
 build/
 dist/
 *.egg-info/
+
+# Test coverage
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
