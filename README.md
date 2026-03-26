@@ -152,13 +152,68 @@ Octopus/
 
 ## 配置说明
 
-### 环境变量
+### 环境变量配置
+
+在运行项目前，请确保设置以下环境变量：
+
+#### 必填配置
+
+| 变量名 | 说明 | 示例值 |
+|--------|------|--------|
+| API_KEY | 大模型API密钥 | sk-xxxxxxxxxxxxxxxx |
+| JWT_SECRET_KEY | JWT认证密钥（生产环境必须修改） | your_secure_random_key |
+
+#### 可选配置
 
 | 变量名 | 说明 | 默认值 |
 |--------|------|--------|
 | MODEL_NAME | 模型名称 | Qwen/Qwen3-8B |
-| API_KEY | API密钥 | (内置默认值) |
 | API_URL | API地址 | https://api.siliconflow.cn/v1 |
+| DEBUG | 调试模式 | False |
+
+### 配置方式
+
+**Windows (PowerShell):**
+```powershell
+# 必填配置
+$env:API_KEY="your_api_key_here"
+$env:JWT_SECRET_KEY="your_secure_random_key_here"
+
+# 可选配置
+$env:MODEL_NAME="Qwen/Qwen3-8B"
+$env:API_URL="https://api.siliconflow.cn/v1"
+```
+
+**Windows (命令提示符):**
+```cmd
+set API_KEY=your_api_key_here
+set JWT_SECRET_KEY=your_secure_random_key_here
+```
+
+**Linux/macOS:**
+```bash
+# 必填配置
+export API_KEY="your_api_key_here"
+export JWT_SECRET_KEY="your_secure_random_key_here"
+
+# 可选配置
+export MODEL_NAME="Qwen/Qwen3-8B"
+export API_URL="https://api.siliconflow.cn/v1"
+```
+
+**或创建 `.env` 文件（推荐）：**
+```bash
+# .env 文件内容
+API_KEY=your_api_key_here
+JWT_SECRET_KEY=your_secure_random_key_here
+MODEL_NAME=Qwen/Qwen3-8B
+API_URL=https://api.siliconflow.cn/v1
+```
+
+> ⚠️ **安全提示**: 
+> - 请勿将 `.env` 文件提交到版本控制系统
+> - 生产环境请务必修改 `JWT_SECRET_KEY` 为安全的随机字符串
+> - API密钥请妥善保管，不要泄露
 
 ## 技术栈
 
