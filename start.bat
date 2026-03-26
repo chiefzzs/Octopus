@@ -1,49 +1,49 @@
 @echo off
-REM 八爪鱼（Octopus）启动脚本 - Windows
+REM Octopus Startup Script - Windows
 
 echo ========================================
-echo 八爪鱼（Octopus）v0.1.0 MVP
+echo Octopus v0.1.0 MVP
 echo ========================================
 echo.
 
-REM 检查Python是否安装
+REM Check Python installation
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo 错误：未找到Python，请先安装Python 3.8+
+    echo Error: Python not found, please install Python 3.8+
     pause
     exit /b 1
 )
 
-REM 检查虚拟环境
+REM Check virtual environment
 if not exist "venv" (
-    echo 创建虚拟环境...
+    echo Creating virtual environment...
     python -m venv venv
     if errorlevel 1 (
-        echo 错误：创建虚拟环境失败
+        echo Error: Failed to create virtual environment
         pause
         exit /b 1
     )
 )
 
-REM 激活虚拟环境
+REM Activate virtual environment
 call venv\Scripts\activate.bat
 
-REM 安装依赖
-echo 安装依赖...
+REM Install dependencies
+echo Installing dependencies...
 pip install -r requirements.txt -q
 if errorlevel 1 (
-    echo 错误：安装依赖失败
+    echo Error: Failed to install dependencies
     pause
     exit /b 1
 )
 
-REM 运行程序
+REM Run program
 echo.
-echo 启动八爪鱼...
+echo Starting Octopus...
 echo.
 python src/main.py
 
-REM 退出虚拟环境
+REM Deactivate virtual environment
 deactivate
 
 pause

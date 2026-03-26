@@ -1,0 +1,158 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Comprehensive Test Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .header { background-color: #f0f0f0; padding: 20px; margin-bottom: 20px; }
+                .summary { display: flex; justify-content: space-between; flex-wrap: wrap; }
+                .summary-item { text-align: center; flex: 1; min-width: 150px; margin: 10px; }
+                .summary-value { font-size: 24px; font-weight: bold; }
+                .summary-label { color: #666; }
+                .test-results { margin-top: 20px; }
+                .test-result { padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #ccc; }
+                .passed { background-color: #d4edda; border-left-color: #28a745; }
+                .failed { background-color: #f8d7da; border-left-color: #dc3545; }
+                .test-name { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+                .test-details { margin-top: 10px; font-size: 14px; }
+                .error { color: #721c24; margin-top: 10px; padding: 10px; background-color: #f5c6cb; border-radius: 3px; }
+                .stdout { color: #155724; margin-top: 10px; padding: 10px; background-color: #c3e6cb; border-radius: 3px; white-space: pre-wrap; }
+                .timestamp { color: #666; font-size: 12px; margin-top: 5px; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>Comprehensive Test Report</h1>
+                <p>Generated: 2026-03-27 01:11:02</p>
+                <div class="summary">
+                    <div class="summary-item">
+                        <div class="summary-value">4</div>
+                        <div class="summary-label">Total Test Scripts</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">2</div>
+                        <div class="summary-label">Passed</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">2</div>
+                        <div class="summary-label">Failed</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">50.0%</div>
+                        <div class="summary-label">Pass Rate</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">361.29s</div>
+                        <div class="summary-label">Total Duration</div>
+                    </div>
+                </div>
+            </div>
+            <div class="test-results">
+                <h2>Test Results</h2>
+        
+                <div class="test-result failed">
+                    <div class="test-name">1. tests/test_access_service.py - FAILED</div>
+                    <div class="test-details">
+                        <div>Return Code: 1</div>
+                        <div class="timestamp">Tested at: 2026-03-27 01:11:02</div>
+                    </div>
+                    
+                    <div class="stdout"><strong>Output:</strong><br>============================================================
+开始运行接入服务测试
+============================================================
+等待接入服务启动...
+接入服务启动失败，请检查服务是否正常运行
+</div>
+                </div>
+            
+                <div class="test-result failed">
+                    <div class="test-name">2. tests/test_control_service.py - FAILED</div>
+                    <div class="test-details">
+                        <div>Return Code: 1</div>
+                        <div class="timestamp">Tested at: 2026-03-27 01:11:02</div>
+                    </div>
+                    
+                    <div class="stdout"><strong>Output:</strong><br>============================================================
+开始运行控制服务测试
+============================================================
+等待控制服务启动...
+控制服务启动失败，请检查服务是否正常运行
+</div>
+                </div>
+            
+                <div class="test-result passed">
+                    <div class="test-name">3. tests/test_realtime_service.py - PASSED</div>
+                    <div class="test-details">
+                        <div>Return Code: 0</div>
+                        <div class="timestamp">Tested at: 2026-03-27 01:11:02</div>
+                    </div>
+                    
+                    <div class="stdout"><strong>Output:</strong><br>============================================================
+开始运行实时输出服务测试
+============================================================
+等待实时输出服务启动...
+实时输出服务已启动，开始测试...
+
+[PASS] 实时输出服务健康检查 - PASSED
+[PASS] 实时输出服务流式API - PASSED
+[PASS] 实时输出服务发送消息 - PASSED
+[PASS] 实时输出服务广播消息 - PASSED
+[PASS] 实时输出服务WebSocket连接 - PASSED
+[PASS] 实时输出服务并发流式请求 - PASSED
+[PASS] 实时输出服务消息类型 - PASSED
+  流式响应时间: 7.49秒
+  响应数据块数量: 108
+[PASS] 实时输出服务流式性能 - PASSED
+[PASS] 实时输出服务多个WebSocket连接 - PASSED
+[PASS] 实时输出服务消息代理 - PASSED
+
+===========</div>
+                </div>
+            
+                <div class="test-result passed">
+                    <div class="test-name">4. tests/test_execution_service.py - PASSED</div>
+                    <div class="test-details">
+                        <div>Return Code: 0</div>
+                        <div class="timestamp">Tested at: 2026-03-27 01:11:02</div>
+                    </div>
+                    <div class="error"><strong>Error:</strong><br>2026-03-27 01:10:53,447 - services.execution.intent - INFO - Intent analyzed: query (confidence: 0.7)
+2026-03-27 01:10:53,447 - services.execution.intent - INFO - Intent analyzed: action (confidence: 0.8)
+2026-03-27 01:10:53,447 - services.execution.intent - INFO - Intent analyzed: analysis (confidence: 0.8)
+2026-03-27 01:10:53,447 - services.execution.intent - INFO - Intent analyzed: modification (confidence: 0.7)
+2026-03-27 01:10:53,447 - services.execution.intent - INFO - Intent analyzed: search (confidence: 0.8)
+2026-03-27 01:10:53,964 - services.execution.planning - INFO - Planned 4 tasks for intent: action
+2026-03-27 01:10:54,469 - services.execution.context - INFO - Created context cd1c3130-685e-4ba6-8781-048534779f60 for session test_session
+2026-03-27 01:10:54,971 - services.execution.tools - INFO - Selected tool: file_reader (score: 6.0)
+2026-03-27 01:10:55,475 - services.execution.context - INFO - Created context 28e72939-843b-4ccc-a0ba-306c4da99275 for session test_session
+2026-03-27 01:10:55,477 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,477 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,477 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,479 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,479 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,480 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,480 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,480 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,482 - services.execution.tools - WARNING - No suitable tool found
+2026-03-27 01:10:55,482 - services.execution.tools - WARNING - No suitable tool found
+</div>
+                    <div class="stdout"><strong>Output:</strong><br>============================================================
+Starting Execution Service Tests
+============================================================
+Waiting for execution service to start...
+Execution service started, beginning tests...
+
+[PASS] Execution Service Health Check - PASSED
+[PASS] Intent Analysis - PASSED
+[PASS] Task Planning - PASSED
+[PASS] Context Management - PASSED
+[PASS] Tool Selection - PASSED
+[PASS] ReAct Engine - PASSED
+[PASS] Execution API - PASSED
+[PASS] Stream Executio</div>
+                </div>
+            
+            </div>
+        </body>
+        </html>
+        

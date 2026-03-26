@@ -120,3 +120,72 @@ class AuthManager:
                 "status": "error",
                 "message": "token无效"
             }
+    
+    async def register(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """用户注册
+        
+        Args:
+            user_data: 用户数据
+            
+        Returns:
+            注册结果
+        """
+        try:
+            username = user_data.get("username")
+            password = user_data.get("password")
+            email = user_data.get("email")
+            
+            if not username or not password:
+                return {
+                    "status": "error",
+                    "message": "用户名和密码不能为空"
+                }
+            
+            # 这里简化处理，实际需要将用户信息保存到数据库
+            user_id = f"user_{int(time.time())}"
+            
+            return {
+                "status": "success",
+                "user_id": user_id,
+                "username": username,
+                "message": "注册成功"
+            }
+        except Exception as e:
+            self.logger.error(f"注册失败: {e}")
+            return {
+                "status": "error",
+                "message": f"注册失败: {str(e)}"
+            }
+    
+    async def check_permission(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """检查用户权限
+        
+        Args:
+            user_data: 用户数据
+            
+        Returns:
+            权限检查结果
+        """
+        try:
+            permission = user_data.get("permission", "user")
+            
+            # 这里简化处理，实际需要从数据库获取用户权限
+            permissions = {
+                "admin": ["read", "write", "delete", "manage"],
+                "user": ["read", "write"],
+                "guest": ["read"]
+            }
+            
+            user_permissions = permissions.get(permission, ["read"])
+            
+            return {
+                "status": "success",
+                "permission": permission,
+                "permissions": user_permissions
+            }
+        except Exception as e:
+            self.logger.error(f"权限检查失败: {e}")
+            return {
+                "status": "error",
+                "message": f"权限检查失败: {str(e)}"
+            }

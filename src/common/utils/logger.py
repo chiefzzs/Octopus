@@ -35,7 +35,7 @@ def get_logger(name: str) -> logging.Logger:
             os.makedirs(log_dir)
         
         log_file = os.path.join(log_dir, f"octopus_{datetime.now().strftime('%Y%m%d')}.log")
-        file_handler = logging.FileHandler(log_file)
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
         file_handler.setLevel(logging.INFO)
         
         # 创建格式化器

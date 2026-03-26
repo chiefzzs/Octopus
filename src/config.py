@@ -15,9 +15,9 @@ class Config:
     def __init__(self):
         """初始化配置"""
         # 模型配置
-        self.model_name = os.environ.get('MODEL_NAME', 'Qwen/Qwen3-8B')
-        self.api_key = os.environ.get('API_KEY', 'sk-goyanzaurqetmirffysvlrdcgsgjsaykspiprcbkyjdicjjr')
-        self.api_url = os.environ.get('API_URL', 'https://api.siliconflow.cn/v1')
+        self.model_name = os.environ.get('MODEL_NAME')
+        self.api_key = os.environ.get('API_KEY')
+        self.api_url = os.environ.get('API_URL')
         
         # 应用配置
         self.app_name = "八爪鱼"
